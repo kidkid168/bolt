@@ -59,10 +59,10 @@ if sys.platform == 'darwin':
     os.environ['LDFLAGS'] = '-mmacosx-version-min=10.9 -stdlib=libc++ -framework Accelerate'
     os.environ["CC"] = "g++"  # force compiling c as c++
 else:  # based on Issue #4
-    extra_args += ['std=c++11', '-stdlib=libc++']
+    extra_args += ['-std=c++11', '-lstdc++']
     os.environ['CC'] = "clang"
     os.environ['CXX'] = "clang++"
-    os.environ['LDFLAGS'] = '-lc++'
+    #os.environ['LDFLAGS'] = '-lc++'
 # else:
     # os.environ["CC"] = "clang++"  # force compiling c as c++
 
